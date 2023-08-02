@@ -34,6 +34,13 @@ function Auth() {
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     handleSignUp(signUpUserData);
+    // setsignUpUserData((prevUserData) => ({
+    //   ...prevUserData,
+    //   email: "",
+    //   password: "",
+    //   userName: "",
+    //   phoneNumber: "",
+    // }));
   };
 
   const handleSignIn = async (signInUserData) => {
@@ -55,6 +62,11 @@ function Auth() {
   const handleSignInSubmit = (e) => {
     e.preventDefault();
     handleSignIn(signInUserData);
+    // setsignInUserData((prevUserData) => ({
+    //   ...prevUserData,
+    //   email: "",
+    //   password: "",
+    // }));
   };
 
   return (
