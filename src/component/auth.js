@@ -1,7 +1,7 @@
 import "./auth.css";
 import { useState } from "react";
 import axios from "axios";
-// import {useHistory} from "react-router-dom";
+
 function Auth() {
   const [signUpUserData, setsignUpUserData] = useState({
     userName: "",
@@ -9,7 +9,6 @@ function Auth() {
     phoneNumber: "",
     password: "",
   });
-  // const history = useHistory();
   const [signInUserData, setsignInUserData] = useState({
     email: "",
     password: "",
@@ -44,13 +43,6 @@ function Auth() {
         signInUserData
       );
       console.log(response.data);
-      // const { token } = response.data;
-
-      // // Store the authentication token in localStorage (you can use sessionStorage as well)
-      // localStorage.setItem('authToken', token);
-
-      // // Redirect the user to another page after successful sign-in
-      // history.push('/dashboard');
     } catch (error) {
       alert("All properties required");
       console.log(error);
