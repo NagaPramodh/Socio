@@ -9,7 +9,6 @@ const FriendSuggestWidget = ({ userId }) => {
   const dispatch = useDispatch();
   const { palette } = useTheme();
   const token = useSelector((state) => state.token);
-  // console.log(token);
   const suggestfriends = useSelector((state) => state.user.suggestFriends);
 
   const getFriendsSuggest = async () => {
@@ -30,7 +29,7 @@ const FriendSuggestWidget = ({ userId }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <WidgetWrapper style={{ paddingRight: 0, marginTop: 10 }}>
+    <WidgetWrapper style={{ paddingRight: 0, marginTop: 16 }}>
       <Typography
         color={palette.neutral.dark}
         variant="h5"
@@ -44,7 +43,7 @@ const FriendSuggestWidget = ({ userId }) => {
         flexDirection="column"
         gap="1.5rem"
         sx={{
-          maxHeight: "200px", // Adjust the maximum height as needed
+          maxHeight: "200px",
           overflowY: "auto",
           paddingRight: 0,
         }}

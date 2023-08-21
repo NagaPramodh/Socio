@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import WidgetWrapper from "components/WidgetWrapper";
-import { Typography, useTheme } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { setPosts } from "state";
 
@@ -33,7 +32,6 @@ const CheckboxFilters = ({ applyFilters }) => {
         "Content-Type": "application/json",
         Authorization: `${token}`,
       },
-      // body: JSON.stringify(selectedFilters), // No need for this
     })
       .then((response) => response.json())
       .then((data) => {

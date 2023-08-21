@@ -27,7 +27,7 @@ const FriendListWidget = ({ userId }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <WidgetWrapper style={{ paddingRight: 0, marginTop: 10 }}>
+    <WidgetWrapper style={{ paddingRight: 0, marginTop: 16 }}>
       <Typography
         color={palette.neutral.dark}
         variant="h5"
@@ -51,7 +51,6 @@ const FriendListWidget = ({ userId }) => {
             friendId={friend._id}
             name={`${friend.userName}`}
             subtitle={friend.occupation}
-            // userPicturePath={friend.picturePath}
           />
         ))}
       </Box>
