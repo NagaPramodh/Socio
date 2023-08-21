@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Form from "./Form";
-import blackLogo from "../../logo-images/socio--logo.jpeg";
+import blackLogo from "../../logo-image/socio--logo.jpeg";
 const LoginPage = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");

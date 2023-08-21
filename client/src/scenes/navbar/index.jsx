@@ -21,7 +21,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "state";
 import FlexBetween from "components/FlexBetween";
-import blackLogo from "../../logo-images/socio--logo.jpeg";
+import blackLogo from "../../logo-image/socio--logo.jpeg";
 
 const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
