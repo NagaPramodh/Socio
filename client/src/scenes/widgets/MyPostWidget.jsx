@@ -39,14 +39,17 @@ const MyPostWidget = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:7500/post/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${token}`,
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://socio-blog.onrender.com/post/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const posts = await response.json();
       dispatch(setPosts({ posts }));

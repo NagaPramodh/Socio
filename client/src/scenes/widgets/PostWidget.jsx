@@ -30,14 +30,17 @@ const PostWidget = ({
   const main = palette.neutral.main;
   const primary = palette.primary.main;
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:7500/post/${postId}/like`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userId: loggedInUserId }),
-    });
+    const response = await fetch(
+      `https://socio-blog.onrender.com/post/${postId}/like`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: loggedInUserId }),
+      }
+    );
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };

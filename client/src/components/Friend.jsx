@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   // console.log(token);
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:7500/user/${_id}/${friendId}`,
+      `https://socio-blog.onrender.com/user/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

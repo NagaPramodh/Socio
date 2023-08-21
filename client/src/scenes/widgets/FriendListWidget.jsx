@@ -12,7 +12,7 @@ const FriendListWidget = ({ userId }) => {
   const friends = useSelector((state) => state.user.friends);
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:7500/user/${userId}/friends`,
+      `https://socio-blog.onrender.com/user/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `${token}` },

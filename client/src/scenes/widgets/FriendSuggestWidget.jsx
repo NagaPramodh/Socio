@@ -13,7 +13,7 @@ const FriendSuggestWidget = ({ userId }) => {
 
   const getFriendsSuggest = async () => {
     const response = await fetch(
-      `http://localhost:7500/user/${userId}/suggest`,
+      `https://socio-blog.onrender.com/user/${userId}/suggest`,
       {
         method: "GET",
         headers: { Authorization: `${token}` },

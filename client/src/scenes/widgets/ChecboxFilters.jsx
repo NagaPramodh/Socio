@@ -26,13 +26,16 @@ const CheckboxFilters = ({ applyFilters }) => {
       categoryFilter = "All"; // Default to "All" if no filters are selected
     }
 
-    fetch(`http://localhost:7500/post/category?category=${categoryFilter}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `${token}`,
-      },
-    })
+    fetch(
+      `https://socio-blog.onrender.com/post/category?category=${categoryFilter}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

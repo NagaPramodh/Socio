@@ -9,7 +9,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
-    const response = await fetch("http://localhost:7500/post/", {
+    const response = await fetch("https://socio-blog.onrender.com/post/", {
       method: "GET",
       headers: { Authorization: `${token}` },
     });
@@ -18,10 +18,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   };
 
   const getUserPosts = async () => {
-    const response = await fetch(`http://localhost:7500/post/${userId}/posts`, {
-      method: "GET",
-      headers: { Authorization: `${token}` },
-    });
+    const response = await fetch(
+      `https://socio-blog.onrender.com/post/${userId}/posts`,
+      {
+        method: "GET",
+        headers: { Authorization: `${token}` },
+      }
+    );
 
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
