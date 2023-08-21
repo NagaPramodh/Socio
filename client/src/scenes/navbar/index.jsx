@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
+import blackLogo from "../../logo-images/socio--logo.jpeg";
 
 const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -36,12 +37,13 @@ const Navbar = () => {
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
+  const backgroundColor = theme.palette.background.default;
 
   const fullName = `${user.userName}`;
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 6%" backgroundColor={backgroundColor}>
       <FlexBetween gap="1.75rem">
-        <Typography
+        {/* <Typography
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="primary"
@@ -54,7 +56,8 @@ const Navbar = () => {
           }}
         >
           Socio
-        </Typography>
+        </Typography> */}
+        <img src={blackLogo} alt="logo" height={70} />
         {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
@@ -68,6 +71,7 @@ const Navbar = () => {
             </IconButton>
           </FlexBetween>
         )}
+
         {/* <Typography
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
