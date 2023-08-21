@@ -1,11 +1,13 @@
 import { Box } from "@mui/material";
+import { useTheme } from "@mui/material";
 const UserImage = ({ size = "60px", name }) => {
+  const { palette } = useTheme();
   return (
     <Box width={size} height={size}>
       <div
         className="avatar"
         style={{
-          backgroundColor: "blue",
+          backgroundColor: "#d576e8",
           objectFit: "cover",
           borderRadius: "50%",
           display: "flex",

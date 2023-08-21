@@ -53,7 +53,7 @@ const PostWidget = ({
         friendId={postUserId}
         name={name}
         subtitle={location}
-        userPicturePath={userPicturePath}
+        // userPicturePath={userPicturePath}
       />
       <Typography color={main} sx={{ mt: "1rem" }}>
         {content}
@@ -88,9 +88,9 @@ const PostWidget = ({
           </FlexBetween>
         </FlexBetween>
 
-        <IconButton>
+        {/* <IconButton>
           <ShareOutlined />
-        </IconButton>
+        </IconButton> */}
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">

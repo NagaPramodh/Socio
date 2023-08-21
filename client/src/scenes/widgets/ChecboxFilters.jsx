@@ -8,7 +8,6 @@ import { setPosts } from "state";
 
 const CheckboxFilters = ({ applyFilters }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const { palette } = useTheme();
   const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
 

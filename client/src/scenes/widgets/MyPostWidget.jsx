@@ -105,7 +105,7 @@ const MyPostWidget = () => {
   return (
     <WidgetWrapper>
       <FlexBetween gap="1.5rem">
-        <UserImage name={userName[0]} />
+        <UserImage name={userName[0].toUpperCase()} />
         <InputBase
           placeholder="What's on your mind..."
           onChange={(e) => setContent(e.target.value)}

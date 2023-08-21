@@ -55,6 +55,9 @@ export const themeSettings = (mode) => {
               default: colorTokens.grey[1100],
               alt: colorTokens.grey[800],
             },
+            avatar: {
+              default: colorTokens.primary[1000],
+            },
           }
         : {
             // palette values for light mode
