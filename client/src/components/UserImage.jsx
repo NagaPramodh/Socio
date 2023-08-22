@@ -1,7 +1,5 @@
 import { Box } from "@mui/material";
-import { useTheme } from "@mui/material";
 const UserImage = ({ size = "60px", name }) => {
-  const { palette } = useTheme();
   return (
     <Box width={size} height={size}>
       <div

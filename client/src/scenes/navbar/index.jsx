@@ -10,14 +10,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import {
-  Search,
-  Message,
-  Notifications,
-  Help,
-  Menu,
-  Close,
-} from "@mui/icons-material";
+import { Search, Menu, Close } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "state";
 import FlexBetween from "components/FlexBetween";
@@ -89,7 +82,6 @@ const Navbar = () => {
         </IconButton>
       )}
 
-      {/* MOBILE NAV */}
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
           position="fixed"
@@ -101,7 +93,6 @@ const Navbar = () => {
           minWidth="300px"
           backgroundColor={background}
         >
-          {/* CLOSE ICON */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
@@ -110,7 +101,6 @@ const Navbar = () => {
             </IconButton>
           </Box>
 
-          {/* MENU ITEMS */}
           <FlexBetween
             display="flex"
             flexDirection="column"
@@ -118,9 +108,9 @@ const Navbar = () => {
             alignItems="center"
             gap="3rem"
           >
-            <Message sx={{ fontSize: "25px" }} />
+            {/* <Message sx={{ fontSize: "25px" }} />
             <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
+            <Help sx={{ fontSize: "25px" }} /> */}
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}

@@ -25,7 +25,6 @@ const FriendSuggestWidget = ({ userId }) => {
   };
   useEffect(() => {
     getFriendsSuggest();
-    console.log(suggestfriends);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -57,7 +56,6 @@ const FriendSuggestWidget = ({ userId }) => {
               subtitle={friend.occupation}
             />
           ))}
-        {}
       </Box>
     </WidgetWrapper>
   );
