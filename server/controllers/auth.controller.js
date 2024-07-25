@@ -10,19 +10,21 @@ var bcrypt = require("bcryptjs");
 exports.signUp = (req, res) => {
   // console.log("in signup");
   const user = new User({
-
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8),
     userName: req.body.userName,
-    phoneNumber: req.body.phoneNumber
+    phoneNumber: req.body.phoneNumber,
+    location:req.body.location,
+    occupation:req.body.occupation
   });
 
   user.save()
     .then(user => {
-      res.status(200).send({ messaage: "Successfully Registered" });
+      // console.log(user);
+      res.status(201).send({ messaage: "Successfully Registered" });
     })
     .catch(err => {
-      res.status(500).send(err);
+      res.status(500).send({message:"Registration fails",err});
       console.log({ messaage: "Registration failed" }, err);
 
     });
@@ -61,16 +63,17 @@ exports.signIn = (req, res) => {
           allowInsecureKeySizes: true,
           expiresIn: 86400, // 24 hours
         });
-      userInfo = {}
-      userInfo.email = user.email;
-      userInfo.userName = user.userName;
-      userInfo.phoneNumber = user.phoneNumber;
+        delete user.password;
+      // userInfo = {}
+      // userInfo.email = user.email;
+      // userInfo.userName = user.userName;
+      // userInfo.phoneNumber = user.phoneNumber;
 
 
 
 
       res.status(200).send({
-        userInfo,
+        user,
         accessToken: token
       });
     })
@@ -84,12 +87,13 @@ module.exports.allUsers = (req, res) => {
   const sort = req.query.sort == 'desc' ? -1 : 1;
 
   User.find()
-    .select(['-_id'])
+    // .select(['-_id'])
     .limit(limit)
     .sort({
       userid: sort,
     })
     .then((users) => {
+      // console.log({users});
       res.json(users);
     })
     .catch((err) => console.log(err));

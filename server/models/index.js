@@ -6,6 +6,7 @@ const db = {};
 db.mongoose = mongoose;
 
 db.user = require("./user.model")(mongoose);
+db.post=require("./post.model.js");
 
 
 

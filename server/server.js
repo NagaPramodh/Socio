@@ -1,18 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 
-require("dotenv").config();
-
 const app = express();
-const router = require("./routes/auth.routes.js");
+const authRouter= require('./routes/auth.routes.js');
+const userRouter=require("./routes/user.routes.js");
+const postRouter=require("./routes/post.routes.js");
 
 // (app);
 
+
 var corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
+  origin: "http://localhost:7500"
 };
+
+
 
 app.use(cors(corsOptions));
 
@@ -25,29 +26,29 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./models");
 // const router = require("./routes/auth.routes.js");
 
-console.log(
-  "%%%%%%%%%%%%%%%%%%%%%%%%%",
-  process.env.username,
-  process.env.password
-);
+
+
 db.mongoose
-  .connect(
-    `mongodb+srv://socio:${process.env.password}@cluster0.zkkaw8v.mongodb.net/?retryWrites=true&w=majority`
-  )
+  .connect("mongodb+srv://socio:admin@cluster0.zkkaw8v.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("Successfully connect to MongoDB.");
   })
-  .catch((err) => {
+  .catch(err => {
     console.error("Connection error", err);
     process.exit();
   });
 
-app.use("/api/auth", router);
+  app.use("/api/auth",authRouter);
+  app.use("/api/user",userRouter);
+  app.use("/api/post",postRouter);
+
 
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to socio application." });
 });
+
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

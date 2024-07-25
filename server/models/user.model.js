@@ -3,6 +3,7 @@ module.exports = mongoose => {
   const Schema = mongoose.Schema
   var userSchema = new Schema(
     {
+      
       email: {
         type: String,
         required: true,
@@ -20,12 +21,21 @@ module.exports = mongoose => {
         required: true,
         maxlength: 32,
       },
-      phoneNumber:{
-        type:Number
-    }
+      phoneNumber: {
+        type: Number
+      },
+      friends: {
+        type: Array,
+        default: []
+      },
+      location: String,
+      occupation: String,
 
     },
-    { timestamps: true }
+    {   
+      timestamps: true
+    },
+    
   );
 
   // Schema.method("toJSON", function () {
@@ -34,6 +44,6 @@ module.exports = mongoose => {
   //   return object;
   // });
 
-  const userinfo = mongoose.model("USER",userSchema);
+  const userinfo = mongoose.model("USER", userSchema);
   return userinfo;
 };
